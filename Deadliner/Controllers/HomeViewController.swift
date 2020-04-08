@@ -64,6 +64,14 @@ class HomeViewController: UIViewController {
         categoryTextField.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToActivitiesVC" {
+            let destination = segue.destination as! ActivitiesViewController
+            let selectedIndex = tableView.indexPathForSelectedRow!.row
+            destination.selectedCategory = categories[selectedIndex]
+        }
+    }
+    
     @objc func resignComponent() {
         categorySearchBar.resignFirstResponder()
         categoryTextField.resignFirstResponder()
