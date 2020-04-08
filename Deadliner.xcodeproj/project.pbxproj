@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		422D0755243C6ADE0092763D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D0754243C6ADE0092763D /* AppDelegate.swift */; };
 		422D0757243C6ADE0092763D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D0756243C6ADE0092763D /* SceneDelegate.swift */; };
-		422D0759243C6ADE0092763D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D0758243C6ADE0092763D /* ViewController.swift */; };
 		422D075C243C6ADE0092763D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422D075A243C6ADE0092763D /* Main.storyboard */; };
 		422D075F243C6ADE0092763D /* Deadliner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 422D075D243C6ADE0092763D /* Deadliner.xcdatamodeld */; };
 		422D0761243C6ADF0092763D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422D0760243C6ADF0092763D /* Assets.xcassets */; };
@@ -17,9 +16,6 @@
 		422D076F243C6ADF0092763D /* DeadlinerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D076E243C6ADF0092763D /* DeadlinerTests.swift */; };
 		422D077A243C6ADF0092763D /* DeadlinerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D0779243C6ADF0092763D /* DeadlinerUITests.swift */; };
 		F9139E03243C86A000F2118F /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9139E02243C86A000F2118F /* ActivityTableViewController.swift */; };
-		F9454067243DAF4900CD629E /* DBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9454063243DAF4900CD629E /* DBConstants.swift */; };
-		F9454068243DAF4900CD629E /* Deadliner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9454064243DAF4900CD629E /* Deadliner.xcdatamodeld */; };
-		F9454069243DAF4900CD629E /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9454066243DAF4900CD629E /* DBManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +39,6 @@
 		422D0751243C6ADE0092763D /* Deadliner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deadliner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		422D0754243C6ADE0092763D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		422D0756243C6ADE0092763D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		422D0758243C6ADE0092763D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		422D075B243C6ADE0092763D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		422D075E243C6ADE0092763D /* Deadliner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Deadliner.xcdatamodel; sourceTree = "<group>"; };
 		422D0760243C6ADF0092763D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,9 +51,8 @@
 		422D0779243C6ADF0092763D /* DeadlinerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinerUITests.swift; sourceTree = "<group>"; };
 		422D077B243C6ADF0092763D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9139E02243C86A000F2118F /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
-		F9454063243DAF4900CD629E /* DBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBConstants.swift; path = ../../../../../Downloads/Deadliner/Deadliner/Models/DBConstants.swift; sourceTree = "<group>"; };
-		F9454065243DAF4900CD629E /* Deadliner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Deadliner.xcdatamodel; sourceTree = "<group>"; };
-		F9454066243DAF4900CD629E /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBManager.swift; path = ../../../../../Downloads/Deadliner/Deadliner/Models/DBManager.swift; sourceTree = "<group>"; };
+		F9454073243DB54300CD629E /* DBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBConstants.swift; sourceTree = "<group>"; };
+		F9454074243DB54300CD629E /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +103,10 @@
 		422D0753243C6ADE0092763D /* Deadliner */ = {
 			isa = PBXGroup;
 			children = (
-				F9454062243DAF2600CD629E /* Model */,
+				F9454071243DB53A00CD629E /* Model */,
 				F9454061243DAEE600CD629E /* Controller */,
 				422D0754243C6ADE0092763D /* AppDelegate.swift */,
 				422D0756243C6ADE0092763D /* SceneDelegate.swift */,
-				422D0758243C6ADE0092763D /* ViewController.swift */,
 				422D075A243C6ADE0092763D /* Main.storyboard */,
 				422D0760243C6ADF0092763D /* Assets.xcassets */,
 				422D0762243C6ADF0092763D /* LaunchScreen.storyboard */,
@@ -149,12 +142,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F9454062243DAF2600CD629E /* Model */ = {
+		F9454071243DB53A00CD629E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F9454063243DAF4900CD629E /* DBConstants.swift */,
-				F9454066243DAF4900CD629E /* DBManager.swift */,
-				F9454064243DAF4900CD629E /* Deadliner.xcdatamodeld */,
+				F9454073243DB54300CD629E /* DBConstants.swift */,
+				F9454074243DB54300CD629E /* DBManager.swift */,
+				F9454072243DB54300CD629E /* Deadliner.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,14 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				422D0759243C6ADE0092763D /* ViewController.swift in Sources */,
 				F9139E03243C86A000F2118F /* ActivityTableViewController.swift in Sources */,
 				422D0755243C6ADE0092763D /* AppDelegate.swift in Sources */,
-				F9454069243DAF4900CD629E /* DBManager.swift in Sources */,
 				422D075F243C6ADE0092763D /* Deadliner.xcdatamodeld in Sources */,
-				F9454068243DAF4900CD629E /* Deadliner.xcdatamodeld in Sources */,
 				422D0757243C6ADE0092763D /* SceneDelegate.swift in Sources */,
-				F9454067243DAF4900CD629E /* DBConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,14 +627,11 @@
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		F9454064243DAF4900CD629E /* Deadliner.xcdatamodeld */ = {
+		F9454072243DB54300CD629E /* Deadliner.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F9454065243DAF4900CD629E /* Deadliner.xcdatamodel */,
 			);
-			currentVersion = F9454065243DAF4900CD629E /* Deadliner.xcdatamodel */;
-			name = Deadliner.xcdatamodeld;
-			path = ../../../../../Downloads/Deadliner/Deadliner/Models/Deadliner.xcdatamodeld;
+			path = Deadliner.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
