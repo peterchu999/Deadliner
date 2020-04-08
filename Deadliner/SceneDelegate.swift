@@ -2,8 +2,8 @@
 //  SceneDelegate.swift
 //  Deadliner
 //
-//  Created by Peter Andrew on 07/04/20.
-//  Copyright © 2020 Peter Andrew. All rights reserved.
+//  Created by Muhammad Nobel Shidqi on 07/04/20.
+//  Copyright © 2020 Muhammad Nobel Shidqi. All rights reserved.
 //
 
 import UIKit

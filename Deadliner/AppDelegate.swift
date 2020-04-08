@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Deadliner
 //
-//  Created by Peter Andrew on 07/04/20.
-//  Copyright © 2020 Peter Andrew. All rights reserved.
+//  Created by Muhammad Nobel Shidqi on 07/04/20.
+//  Copyright © 2020 Muhammad Nobel Shidqi. All rights reserved.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    static let singleton = AppDelegate()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
