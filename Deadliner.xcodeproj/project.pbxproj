@@ -16,6 +16,7 @@
 		422D0764243C6ADF0092763D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422D0762243C6ADF0092763D /* LaunchScreen.storyboard */; };
 		422D076F243C6ADF0092763D /* DeadlinerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D076E243C6ADF0092763D /* DeadlinerTests.swift */; };
 		422D077A243C6ADF0092763D /* DeadlinerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D0779243C6ADF0092763D /* DeadlinerUITests.swift */; };
+		E152B6F2243C9352000C6806 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152B6F1243C9352000C6806 /* AddActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		422D0775243C6ADF0092763D /* DeadlinerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeadlinerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422D0779243C6ADF0092763D /* DeadlinerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinerUITests.swift; sourceTree = "<group>"; };
 		422D077B243C6ADF0092763D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E152B6F1243C9352000C6806 /* AddActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				422D0756243C6ADE0092763D /* SceneDelegate.swift */,
 				422D0758243C6ADE0092763D /* ViewController.swift */,
 				422D075A243C6ADE0092763D /* Main.storyboard */,
+				E152B6F1243C9352000C6806 /* AddActivityViewController.swift */,
 				422D0760243C6ADF0092763D /* Assets.xcassets */,
 				422D0762243C6ADF0092763D /* LaunchScreen.storyboard */,
 				422D0765243C6ADF0092763D /* Info.plist */,
@@ -265,6 +268,7 @@
 				422D0759243C6ADE0092763D /* ViewController.swift in Sources */,
 				422D0755243C6ADE0092763D /* AppDelegate.swift in Sources */,
 				422D075F243C6ADE0092763D /* Deadliner.xcdatamodeld in Sources */,
+				E152B6F2243C9352000C6806 /* AddActivityViewController.swift in Sources */,
 				422D0757243C6ADE0092763D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
