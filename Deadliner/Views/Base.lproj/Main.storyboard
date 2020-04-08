@@ -198,13 +198,23 @@
                                                                         <constraint firstAttribute="bottom" secondItem="NcE-rq-0EO" secondAttribute="bottom" constant="8" id="psT-Zc-Bhh"/>
                                                                     </constraints>
                                                                 </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt6-eq-Dhm">
+                                                                    <rect key="frame" x="322" y="8" width="59" height="49"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                                                    <color key="textColor" name="BaseColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.45882352939999999" green="0.85490196080000003" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="pt6-eq-Dhm" secondAttribute="bottom" constant="8" id="3NL-nK-fW6"/>
                                                                 <constraint firstAttribute="bottom" secondItem="EV3-gC-DWO" secondAttribute="bottom" id="NW6-2y-lpV"/>
                                                                 <constraint firstAttribute="trailing" secondItem="EV3-gC-DWO" secondAttribute="trailing" constant="75" id="Nlq-0Q-iRE"/>
+                                                                <constraint firstAttribute="trailing" secondItem="pt6-eq-Dhm" secondAttribute="trailing" constant="8" id="aQd-On-qGw"/>
                                                                 <constraint firstItem="EV3-gC-DWO" firstAttribute="top" secondItem="M1o-tM-4QA" secondAttribute="top" id="foY-pZ-mXc"/>
                                                                 <constraint firstItem="EV3-gC-DWO" firstAttribute="leading" secondItem="M1o-tM-4QA" secondAttribute="leading" id="hdl-PX-zYT"/>
+                                                                <constraint firstItem="pt6-eq-Dhm" firstAttribute="leading" secondItem="EV3-gC-DWO" secondAttribute="trailing" constant="8" id="s8H-uL-xbQ"/>
+                                                                <constraint firstItem="pt6-eq-Dhm" firstAttribute="top" secondItem="M1o-tM-4QA" secondAttribute="top" constant="8" id="sd0-02-0ZB"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -217,6 +227,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="activitiesCountLabel" destination="pt6-eq-Dhm" id="RyE-9X-jMK"/>
                                                     <outlet property="baseView" destination="M1o-tM-4QA" id="zff-ET-6rT"/>
                                                     <outlet property="detailView" destination="EV3-gC-DWO" id="fTX-Za-NP8"/>
                                                     <outlet property="titleLabel" destination="NcE-rq-0EO" id="grW-bL-TeR"/>

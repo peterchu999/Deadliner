@@ -30,11 +30,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUIComponents()
-        if let results = db.fetchData(for: .category) {
-            for result in results {
-                let category = result as! Category
-                categories.append(category)
-            }
+        if let results = db.fetchData(for: .category) as? [Category] {
+            self.categories = results
         }
         
         
@@ -47,6 +44,7 @@ class HomeViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(resignComponent))
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
+        
     }
     
 
@@ -104,13 +102,8 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let categoryTitle = searchBar.text, !categoryTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             let predicate = NSPredicate(format: "title CONTAINS[cd] %@", categoryTitle)
-            if let results = db.fetchData(for: .category, withPredicate: predicate) {
-                var searchCategories: [Category] = []
-                for result in results {
-                    let category = result as! Category
-                    searchCategories.append(category)
-                }
-                self.categories = searchCategories
+            if let results = db.fetchData(for: .category, withPredicate: predicate) as? [Category] {
+                self.categories = results
                 tableView.reloadData()
             }
         }
@@ -123,13 +116,8 @@ extension HomeViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
-            if let results = db.fetchData(for: .category) {
-                var searchCategories: [Category] = []
-                for result in results {
-                    let category = result as! Category
-                    searchCategories.append(category)
-                }
-                self.categories = searchCategories
+            if let results = db.fetchData(for: .category) as? [Category] {
+                self.categories = results
                 tableView.reloadData()
             }
         }
@@ -208,6 +196,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let bgColor = categories[indexPath.row].themeColor as! UIColor
         cell.baseView.backgroundColor = bgColor
         cell.titleLabel.text = categories[indexPath.row].title
+        cell.activitiesCountLabel.text = String(4)
         return cell
     }
     

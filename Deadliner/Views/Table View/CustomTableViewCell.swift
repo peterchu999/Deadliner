@@ -13,6 +13,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var activitiesCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
