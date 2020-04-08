@@ -23,7 +23,7 @@ class ActivitiesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        addNewCategory()
+        addNewActivity()
     }
     
     
@@ -37,7 +37,7 @@ class ActivitiesViewController: UIViewController {
     }
     
     // MARK: - Only for testing purpose
-    func addNewCategory() {
+    func addNewActivity() {
         let newActivity = Activity(context: db.context)
         newActivity.title = "Testing Activity"
         newActivity.category = selectedCategory 
