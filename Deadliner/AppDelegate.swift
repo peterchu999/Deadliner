@@ -5,18 +5,55 @@
 //  Created by Peter Andrew on 07/04/20.
 //  Copyright © 2020 Peter Andrew. All rights reserved.
 //
-
+import UserNotifications
 import UIKit
 import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    let notificationCenter = UNUserNotificationCenter.current()
+    let option: UNAuthorizationOptions = [.alert, .sound, .badge]
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        notificationCenter.delegate = self
+        notificationCenter.requestAuthorization(options: option) {
+            (didAllow, error) in
+            if !didAllow{
+                print("User Decline")
+            }
+        }
+        
+        notificationCenter.getNotificationSettings { (setting) in
+            if setting.authorizationStatus != .authorized {
+                
+            }
+        }
+        
         return true
+    }
+    func scheduleNotification(notificationType:String) {
+        let userActions = "User Actions"
+        let content = UNMutableNotificationContent()
+        content.title = notificationType
+        content.body = "This is Example"
+        content.sound = .default
+        content.badge = 1
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        let identifier = "Local Notification"
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
+        }
+        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
+        let deleteAction = UNNotificationAction(identifier: "Delete", title: "Delete", options: [.destructive])
+        let category = UNNotificationCategory(identifier: userActions, actions: [snoozeAction, deleteAction], intentIdentifiers: [], options: [])
+        
+        notificationCenter.setNotificationCategories([category])
     }
 
     // MARK: UISceneSession Lifecycle
@@ -77,6 +114,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+}
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
 }
 
