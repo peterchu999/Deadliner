@@ -8,6 +8,22 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="amM-9B-J2y">
+            <objects>
+                <viewController id="9Gm-kl-OQN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WyZ-3s-kLw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="oyO-NR-4FN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gTJ-XK-dOw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLx-Ve-QMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="90"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Deadliner" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,9 +34,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKs-AC-8Ua">
                                 <rect key="frame" x="184" y="433" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="testing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9F7-Hc-IDY"/>
+                                    <action selector="callscheduler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MsJ-Ei-zRJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -28,7 +46,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tes" destination="jKs-AC-8Ua" id="wPK-GK-6IE"/>
+                        <segue destination="9Gm-kl-OQN" kind="show" id="t47-L7-UCq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

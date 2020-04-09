@@ -16,7 +16,7 @@
 		422D0764243C6ADF0092763D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422D0762243C6ADF0092763D /* LaunchScreen.storyboard */; };
 		422D076F243C6ADF0092763D /* DeadlinerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D076E243C6ADF0092763D /* DeadlinerTests.swift */; };
 		422D077A243C6ADF0092763D /* DeadlinerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D0779243C6ADF0092763D /* DeadlinerUITests.swift */; };
-		4267021E243D7B76001EE2F8 /* scheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267021D243D7B76001EE2F8 /* scheduleNotification.swift */; };
+		4238559B243DFA380040B53D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238559A243DFA380040B53D /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		422D0775243C6ADF0092763D /* DeadlinerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeadlinerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		422D0779243C6ADF0092763D /* DeadlinerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinerUITests.swift; sourceTree = "<group>"; };
 		422D077B243C6ADF0092763D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4238559A243DFA380040B53D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		425CBB23243CB24C0016CF65 /* Deadliner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deadliner.entitlements; sourceTree = "<group>"; };
-		4267021D243D7B76001EE2F8 /* scheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,6 @@
 			children = (
 				425CBB23243CB24C0016CF65 /* Deadliner.entitlements */,
 				422D0754243C6ADE0092763D /* AppDelegate.swift */,
-				4267021D243D7B76001EE2F8 /* scheduleNotification.swift */,
 				422D0756243C6ADE0092763D /* SceneDelegate.swift */,
 				422D0758243C6ADE0092763D /* ViewController.swift */,
 				422D075A243C6ADE0092763D /* Main.storyboard */,
@@ -114,6 +113,7 @@
 				422D0762243C6ADF0092763D /* LaunchScreen.storyboard */,
 				422D0765243C6ADF0092763D /* Info.plist */,
 				422D075D243C6ADE0092763D /* Deadliner.xcdatamodeld */,
+				4238559A243DFA380040B53D /* Notification.swift */,
 			);
 			path = Deadliner;
 			sourceTree = "<group>";
@@ -268,10 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				422D0759243C6ADE0092763D /* ViewController.swift in Sources */,
+				4238559B243DFA380040B53D /* Notification.swift in Sources */,
 				422D0755243C6ADE0092763D /* AppDelegate.swift in Sources */,
 				422D075F243C6ADE0092763D /* Deadliner.xcdatamodeld in Sources */,
 				422D0757243C6ADE0092763D /* SceneDelegate.swift in Sources */,
-				4267021E243D7B76001EE2F8 /* scheduleNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
