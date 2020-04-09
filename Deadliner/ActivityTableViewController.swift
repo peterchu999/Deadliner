@@ -10,6 +10,7 @@ import UIKit
 
 class ActivityTableViewController: UITableViewController {
 
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,12 +33,28 @@ class ActivityTableViewController: UITableViewController {
     }
 
     
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            print("Coming")
+            break
+        case 1:
+            print("Ongoing")
+            break
+        case 2:
+            print("Done")
+            break
+        default:
+            break
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as? ActivityTableViewCell{
 
             cell.nameActivity?.text = "Hallo"
-            cell.priorityActivity?.text = "Medium"
+            cell.priorityActivity?.text = "Low"
             cell.setTimerActivity(timer: " 2 Days")
             
             return cell

@@ -26,6 +26,9 @@
                                         <segment title="Ongoing"/>
                                         <segment title="Done"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="indexChanged:" destination="djl-rT-VWf" eventType="valueChanged" id="CRN-gV-Vsz"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -78,6 +81,10 @@
                     <navigationItem key="navigationItem" title="My Activity" id="bjm-v0-JZs">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="zcB-1K-bwv"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="OgT-ut-pd4" id="Aky-jz-NSA"/>
+                        <outlet property="tableView" destination="een-b5-qHk" id="LU0-Xw-cX7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BH0-zZ-Fm5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
