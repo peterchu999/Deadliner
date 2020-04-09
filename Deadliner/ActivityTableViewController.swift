@@ -32,12 +32,31 @@ class ActivityTableViewController: UITableViewController {
     }
 
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
-        
-        cell.textLabel?.text = "Hallo"
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as? ActivityTableViewCell{
 
-        return cell
+            cell.nameActivity?.text = "Hallo"
+            cell.priorityActivity?.text = "Medium"
+            cell.setTimerActivity(timer: " 2 Days")
+            
+            return cell
+        }
+        return ActivityTableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){_,_,_ in
+            print("DELETE")
+        }
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit"){_,_,_ in
+            print("Edit")
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        
     }
 
     /*

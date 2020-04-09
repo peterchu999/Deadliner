@@ -16,6 +16,7 @@
 		422D076F243C6ADF0092763D /* DeadlinerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D076E243C6ADF0092763D /* DeadlinerTests.swift */; };
 		422D077A243C6ADF0092763D /* DeadlinerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422D0779243C6ADF0092763D /* DeadlinerUITests.swift */; };
 		F9139E03243C86A000F2118F /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9139E02243C86A000F2118F /* ActivityTableViewController.swift */; };
+		F945407B243F05CF00CD629E /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F945407A243F05CF00CD629E /* ActivityTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +52,7 @@
 		422D0779243C6ADF0092763D /* DeadlinerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinerUITests.swift; sourceTree = "<group>"; };
 		422D077B243C6ADF0092763D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9139E02243C86A000F2118F /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
-		F9454073243DB54300CD629E /* DBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBConstants.swift; sourceTree = "<group>"; };
-		F9454074243DB54300CD629E /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		F945407A243F05CF00CD629E /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,7 @@
 		422D0753243C6ADE0092763D /* Deadliner */ = {
 			isa = PBXGroup;
 			children = (
-				F9454071243DB53A00CD629E /* Model */,
-				F9454061243DAEE600CD629E /* Controller */,
+				F9139E02243C86A000F2118F /* ActivityTableViewController.swift */,
 				422D0754243C6ADE0092763D /* AppDelegate.swift */,
 				422D0756243C6ADE0092763D /* SceneDelegate.swift */,
 				422D075A243C6ADE0092763D /* Main.storyboard */,
@@ -112,6 +111,7 @@
 				422D0762243C6ADF0092763D /* LaunchScreen.storyboard */,
 				422D0765243C6ADF0092763D /* Info.plist */,
 				422D075D243C6ADE0092763D /* Deadliner.xcdatamodeld */,
+				F945407A243F05CF00CD629E /* ActivityTableViewCell.swift */,
 			);
 			path = Deadliner;
 			sourceTree = "<group>";
@@ -132,24 +132,6 @@
 				422D077B243C6ADF0092763D /* Info.plist */,
 			);
 			path = DeadlinerUITests;
-			sourceTree = "<group>";
-		};
-		F9454061243DAEE600CD629E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F9139E02243C86A000F2118F /* ActivityTableViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F9454071243DB53A00CD629E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F9454073243DB54300CD629E /* DBConstants.swift */,
-				F9454074243DB54300CD629E /* DBManager.swift */,
-				F9454072243DB54300CD629E /* Deadliner.xcdatamodeld */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +267,7 @@
 			files = (
 				F9139E03243C86A000F2118F /* ActivityTableViewController.swift in Sources */,
 				422D0755243C6ADE0092763D /* AppDelegate.swift in Sources */,
+				F945407B243F05CF00CD629E /* ActivityTableViewCell.swift in Sources */,
 				422D075F243C6ADE0092763D /* Deadliner.xcdatamodeld in Sources */,
 				422D0757243C6ADE0092763D /* SceneDelegate.swift in Sources */,
 			);
@@ -623,14 +606,6 @@
 				422D075E243C6ADE0092763D /* Deadliner.xcdatamodel */,
 			);
 			currentVersion = 422D075E243C6ADE0092763D /* Deadliner.xcdatamodel */;
-			path = Deadliner.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		F9454072243DB54300CD629E /* Deadliner.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-			);
 			path = Deadliner.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
