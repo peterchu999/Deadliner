@@ -10,10 +10,11 @@ import UIKit
 
 //Modal untuk menambahkan aktivitas ke dalam Core Data
 
-class AddActivityViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddActivityViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     
     
+    @IBOutlet weak var tableForm: UITableView!
     
     @IBOutlet weak var tfActivityName: UITextField!
     @IBOutlet weak var tfStartDate: UITextField!
@@ -22,6 +23,7 @@ class AddActivityViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     let datePicker = UIDatePicker()
     let pickerView = UIPickerView()
+    let placeholder = "Activity Description"
     
     @IBOutlet weak var tfDeadlineDate: UITextField!
     
@@ -41,46 +43,39 @@ class AddActivityViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         pickerData = ["High","Medium","Low"]
 
-        //Membuat Garis Bawah pada textfieldnya
-        let tfBottomLine_activity = CALayer()
-        tfBottomLine_activity.frame = CGRect(x: 0, y: tfActivityName.frame.height - 2, width: tfActivityName.frame.width, height: 2)
-        tfBottomLine_activity.backgroundColor = hexStringToUIColor(hex: "000000").cgColor
-        
-        tfActivityName.borderStyle = .none
-        tfActivityName.layer.addSublayer(tfBottomLine_activity)
-        
-        //Start Date Textfield
-        let tfBottomLine_startDate = CALayer()
-        tfBottomLine_startDate.frame = CGRect(x: 0, y: tfStartDate.frame.height - 2, width: tfStartDate.frame.width, height: 2)
-        tfBottomLine_startDate.backgroundColor = hexStringToUIColor(hex: "000000").cgColor
-        
-        tfStartDate.borderStyle = .none
-        tfStartDate.layer.addSublayer(tfBottomLine_startDate)
-        
-        //Deadline Date Textfield
-        let tfBottomLine_deadlineDate = CALayer()
-        tfBottomLine_deadlineDate.frame = CGRect(x: 0, y: tfDeadlineDate.frame.height - 2, width: tfDeadlineDate.frame.width, height: 2)
-        tfBottomLine_deadlineDate.backgroundColor = hexStringToUIColor(hex: "000000").cgColor
-        
-        tfDeadlineDate.borderStyle = .none
-        tfDeadlineDate.layer.addSublayer(tfBottomLine_deadlineDate)
-        
-        //Priority Activity Textfield
-        let tfBottomLine_priority = CALayer()
-        tfBottomLine_priority.frame = CGRect(x: 0, y: tfPriority.frame.height - 2, width: tfPriority.frame.width, height: 2)
-        tfBottomLine_priority.backgroundColor = hexStringToUIColor(hex: "000000").cgColor
-        
-        tfPriority.borderStyle = .none
-        tfPriority.layer.addSublayer(tfBottomLine_priority)
-        
-        
-        
         createDatePicker()
         createDatePickerForDeadline()
         createPriority()
         
+        tvActivityDescription.textColor = hexStringToUIColor(hex: "C6C6C8")
+        activityDescriptionSetting()
+    }
+    
+    func activityDescriptionSetting(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+
+        view.addGestureRecognizer(tap)
         
-        
+        tvActivityDescription.delegate = self
+        tvActivityDescription.text = placeholder
+    }
+    
+    @objc func dismissKeyboard() {
+           view.endEditing(true)
+    }
+    
+    func textViewDidBeginEditing(_ tvActivityDescription: UITextView) {
+        if tvActivityDescription.textColor == hexStringToUIColor(hex: "C6C6C8") {
+            tvActivityDescription.text = ""
+            tvActivityDescription.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ tvActivityDescription: UITextView) {
+        if tvActivityDescription.text.isEmpty {
+            tvActivityDescription.text = placeholder
+            tvActivityDescription.textColor = hexStringToUIColor(hex: "C6C6C8")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -155,7 +150,7 @@ class AddActivityViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @objc func donePressed(){
         let formater = DateFormatter()
-        formater.dateFormat = "dd.MM.yyyy hh.mm.ss aa"
+        formater.dateFormat = "MMMM dd, yyyy hh:mm aa"
         let result = formater.string(from: datePicker.date)
         tfStartDate.text = "\(result)"
         self.view.endEditing(true)
@@ -163,7 +158,7 @@ class AddActivityViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @objc func donePressedForDeadline(){
         let formater = DateFormatter()
-        formater.dateFormat = "dd.MM.yyyy hh.mm.ss aa"
+        formater.dateFormat = "MMMM dd, yyyy hh:mm aa"
         let result = formater.string(from: datePicker.date)
         tfDeadlineDate.text = "\(result)"
         self.view.endEditing(true)
