@@ -16,11 +16,20 @@ func calculateDate(start: Date, end: Date) -> String{
 
 //Calculate date using String parameters
 func calculateDate(start: String, end: String) -> String{
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
-    let startDate = dateFormatter.date(from: start)!
-    let endDate = dateFormatter.date(from: end)!
+    let startDate = stringtoDateFormatter(dateToBeFormatted: start)
+    let endDate = stringtoDateFormatter(dateToBeFormatted: end)
     return dateCalculation(start: startDate, end: endDate)
+}
+
+//Calculate when only start is in String format
+func calculateDate(start: String, end: Date) -> String{
+    let startDate = stringtoDateFormatter(dateToBeFormatted: start)
+    return dateCalculation(start: startDate, end: end)
+}
+
+func calculateDate(start: Date, end: String) -> String{
+    let endDate = stringtoDateFormatter(dateToBeFormatted: end)
+    return dateCalculation(start: start, end: endDate)
 }
 
 
@@ -37,4 +46,11 @@ private func dateCalculation(start: Date, end: Date) -> String{
     }
     let days = floor(hour/24)
     return "\(Int(days)) Days remaining"
+}
+
+//Formatting string to date
+func stringtoDateFormatter(dateToBeFormatted: String) -> Date{
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
+    return dateFormatter.date(from: dateToBeFormatted)!
 }
