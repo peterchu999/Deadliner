@@ -12,9 +12,13 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    static let singleton = AppDelegate()
+    let window = UIWindow.init()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Notification.requestNotificationAuth()
+        Notification.removeBadge()
         return true
     }
 
@@ -78,15 +82,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
-
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
-    }
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        completionHandler()
-    }
-}
-

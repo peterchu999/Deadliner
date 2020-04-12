@@ -10,17 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
     var iteration = 5
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let badge = defaults.integer(forKey: "badge")
+        print("this apps have \(badge)")
     }
     
     
     @IBAction func callscheduler(_ sender: Any) {
-        Notification.scheduleNotification(notificationType: "alert", "peter \(iteration)",Double(iteration))
-        Notification.scheduleNotification(notificationType: "GG", "second \(iteration+10)",Double(iteration+10))
+        Notification.addNotification()
     }
     
+    @IBAction func removeSChedukar(_ sender: Any) {
+        Notification.removeNotification()
+    }
+    
+    @IBAction func getSchedule(_ sender: Any) {
+        Notification.getCurrentPendingNotif()
+    }
     
 }
 
